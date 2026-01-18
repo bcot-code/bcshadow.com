@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BmShadow | Shadow Operator & DM</title>
+    <style>
+        :root {
+            --primary: #007AFF; /* Sleek Blue */
+            --bg: #0a0a0a;     /* Deep Black */
+            --text: #e0e0e0;
+            --accent: #333333;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .services {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--accent);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #444;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .contact-section {
+            background: #111;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-outline { border: 1px solid var(--text); color: var(--text); }
+
+        footer { padding: 40px; text-align: center; font-size: 0.8rem; color: #666; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">BmShadow</div>
+        <p style="color: #888; font-size: 1.2rem;">Shadow Operator • Professional DM • Narrative Architect</p>
+        <div style="margin-top: 20px;">
+            <a href="#contact" class="btn btn-primary">Initiate Contact</a>
+        </div>
+    </header>
+
+    <section class="services">
+        <h2>Executive Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Shadow Operations</h3>
+                <p>Discreet workflow management and tactical advisory. I handle the backend complexities so your front-end remains flawless.</p>
+            </div>
+            <div class="card">
+                <h3>Professional DM</h3>
+                <p>High-fidelity TTRPG sessions for corporate team-building or private groups. Immersive world-building meets strategic gameplay.</p>
+            </div>
+            <div class="card">
+                <h3>Strategic DMing</h3>
+                <p>Direct outreach and management of high-value communications with absolute confidentiality and precision.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2>Secure Connection</h2>
+        <p>Choose your preferred channel for consultation.</p>
+        <a href="mailto:contact@bmshadow.com" class="btn btn-outline">Email BmShadow</a>
+        <a href="#" class="btn btn-outline">Zoom Meeting</a>
+    </section>
+
+    <footer>
+        &copy; 2026 BmShadow. All Rights Reserved. | Discretion Guaranteed.
+    </footer>
+
+</body>
+</html>
