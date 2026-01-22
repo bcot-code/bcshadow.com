@@ -49,6 +49,89 @@
         </div>
     </section>
 
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about working with Shadow Operator</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What do you do?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We build and run the backend for creators and executives. Think product creation, sales systems, and automation — all handled behind the scenes so you can focus on your content.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How much does it cost?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We work on a revenue share basis thru Whop. You don't pay upfront — the moment sales go. Payment get immediately divided, the rest of 70% goes to you and 30% goes to us.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What products do you make?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Courses, ebooks, membership sites, digital downloads, and custom tools. Whatever your audience needs and you're qualified to deliver.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need an existing product?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nope. If you have an audience and knowledge to share, we can figure out the product together. Many of our partners start with just an idea.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How much work is it for me?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Very little! You've done all of the content and audiences. We handle everything else — creation, marketing, delivery, and optimization.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How big does my audience need to be?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No strict minimum. We evaluate each creator based on engagement and potential, not just follower count. Smaller but engaged audiences can work great.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How long until I make money?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most partners see first sales within 30-60 days of launch. Full momentum builds over the following months as systems scale up.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I get started?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Send us a message through the secure channel below. Tell us a bit about yourself, your audience, and your goals. If we're a fit, we'll outline a plan and get to work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="contact-section" id="contact">
         <h2>Ready to go Ghost?</h2>
         <p>Inquire for partnership availability.</p>
@@ -58,6 +141,29 @@
     <footer>
         &copy; 2026 BcShadow. All Rights Reserved. | Shadow Operator Protocol.
     </footer>
+
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').style.maxHeight = null;
+                });
+                
+                // Toggle current FAQ
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
