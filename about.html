@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <div id="scroll-progress"></div>
     <nav>
         <div class="nav-logo" onclick="window.location.href='index.html'">BcShadow</div>
+        <button class="burger-btn" id="burger-btn" aria-label="Toggle menu">☰</button>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="index.html#services">Services</a>
@@ -44,6 +45,32 @@
                     <span class="accent-number">03</span>
                     <h3>Technical Lethality</h3>
                     <p>From complex automation to strategic outreach, we use elite tools to maintain your competitive edge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="strategic-split">
+        <div class="split-container">
+            <div class="split-visual">
+                <img src="./assets/mockupwebsite-3.jpg" alt="The Shadow System" class="system-mockup">
+                <div class="glow-effect"></div>
+            </div>
+
+            <div class="split-text">
+                <span class="status-tag">OPERATIONAL PHILOSOPHY</span>
+                <h2 class="orange-text">SYSTEMS SUSTAIN NARRATIVES.</h2>
+                <p>A great story can launch a brand, but only a great system can sustain it. Most creators fail because their "Narrative" outpaces their "Infrastructure."</p>
+                
+                <div class="philosophy-grid">
+                    <div class="phil-item">
+                        <h4>THE NARRATIVE</h4>
+                        <p>Your vision, your voice, and your connection with the audience. This is the heart of the brand.</p>
+                    </div>
+                    <div class="phil-item">
+                        <h4>THE SYSTEM</h4>
+                        <p>The invisible engine—DM triage, automated delivery, and workflow architecture. This is the spine.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -143,6 +170,22 @@
     </footer>
 
     <script>
+        const burgerBtn = document.getElementById('burger-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const body = document.body;
+
+        burgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Toggle body scroll
+            if (navLinks.classList.contains('active')) {
+                body.style.overflow = 'hidden'; // Stop background scroll
+                burgerBtn.textContent = '✕';
+            } else {
+                body.style.overflow = 'auto'; // Enable background scroll
+                burgerBtn.textContent = '☰';
+            }
+        });
         // FAQ Accordion functionality
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
@@ -163,7 +206,16 @@
                 }
             });
         });
-    </script>
+        window.onscroll = function() {
+            updateScrollProgress();
+        };
 
+        function updateScrollProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+        }
+    </script>
 </body>
 </html>
